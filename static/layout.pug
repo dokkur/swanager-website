@@ -1,0 +1,44 @@
+doctype html
+html
+    head
+        title: block title
+            block subtitle
+            |  |
+            | Swanager - a high-level tool for managing Docker clusters
+
+        link(rel='stylesheet', href='/css/style.css')
+
+        block scripts
+    body
+        .header
+            .container
+                a.logo(href="/") Swanager
+                ul
+                    li
+                        a(href="/") CI
+                    li
+                        a(href="/") CLOUD
+        .page
+            .container
+                .sidebar
+                    ul
+                        li
+                            a(href="/") Overview
+                        li
+                            a(href="/api") API
+                        li
+                            a(href="/cloud") Cloud
+                        li
+                            a(href="/ci") CI
+                        li
+                            a(href="/faq") FAQ
+                        li
+                            a(href="/usecases") Usecases
+                        li
+                            a(href="/licence") Licence
+                        li
+                            a(href="/credentials") Credentials
+                .content
+                    block content
+        block footer
+
