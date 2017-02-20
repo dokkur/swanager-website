@@ -4,7 +4,20 @@ block subtitle
     | Home
 
 block content
-    h1 Welcome to swanager!
-    p We offer a high-level Docker clusters management tool which mostly applied to complex microservices applications, SaaS projects and horizontal-scalable applications. If you have any terminological issues, please visit our <a href="/">FAQ</a>.
+    h1 Welcome to Swanager!
+    p We offer a high-level Docker clusters management tool which is mostly applied to complex microservices applications, SaaS projects and horizontal-scalable applications. If you have any terminological issues, please visit our <a href="/">FAQ</a>.
     h2 Brief overview
+    p Focusing on the High Availability (HA), we're building a couple of services to join them into common solution.
+    p
+        b The main HA essentials are:
+        br/
+        | - processes fault tolerance
+        br/
+        | - databases accessibility
+        br/
+        | - storage accessibility
+        br/
+        | - reliable DNS
+    p All the processes should be launched in a clusters. This allows to do a scaling and to provide the the HA. Swanager is a Swarm Services Manager, it works on top of Docker Engine (using its built-in Swarm) and provides a reliable managing of all the services through the API or the UI Admin Tool.
+
 
