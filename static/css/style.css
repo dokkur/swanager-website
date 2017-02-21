@@ -20,12 +20,14 @@ a{
     position: relative;
     margin: 0 auto;
     width: 100%;
-    max-width: 790px;
+    max-width: 970px;
     padding: 0 16px;
 }
 
 .header{
     width: 100%;
+    height: 3.5em;
+    overflow: hidden;
     background: white;
     box-shadow: 0 0 2px rgba(0,0,0,.5);
     display: inline-block;
@@ -34,7 +36,6 @@ a{
     padding: 18px 0 16px 0;
     font-size: 1em;
     font-weight: bold;
-    /*user-select: none;*/
 }
 
 .header ul{
@@ -44,6 +45,7 @@ a{
 }
 .header ul li{
     display: inline-block;
+    vertical-align: middle;
     margin: 0 0 0 15px;
     padding: 0;
 }
@@ -61,6 +63,9 @@ a{
 .header ul li a:hover{
     background: #6cc0e5;
     color: white;
+}
+.header .github-star{
+    float: right;
 }
 
 .page{
@@ -104,11 +109,46 @@ a{
 }
 .content p a{
     color: #41addd;
+    font-family: inherit;
 }
 .content p a:hover{
     color: #6cc0e5;
 }
 .content h2{
     font-size: 1.5em;
+}
+
+
+.footer{
+    width: 100%;
+    background: white;
+    box-shadow: 0 0 2px rgba(0,0,0,.5);
+    display: inline-block;
+    vertical-align: middle;
+    padding: 18px 0 16px 0;
+    font-size: 1em;
+    font-weight: bold;
+}
+.footer .social{
+    float: right;
+    padding: 0;
+    margin: 0;
+}
+.footer .social li{
+    display: inline-block;
+    margin-left: 16px;
+}
+.footer .credentials{
+    float: left;
+    font-weight: lighter;
+    font-size: 11px;
+    line-height: 36px;
+}
+.footer .credentials a{
+    font-size: inherit;
+    color: #41addd;
+}
+.content .credentials a:hover{
+    color: #6cc0e5;
 }
 

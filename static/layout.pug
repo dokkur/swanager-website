@@ -8,18 +8,25 @@ html
 
         link(rel='stylesheet', href='/css/style.css')
         script(src='/js/jquery-1.11.1.min.js')
+        script(async defer src="https://buttons.github.io/buttons.js")
         script(src='/js/script.js')
 
         block scripts
     body
         .header
             .container
-                a.logo(href="/") Swanager
+                a.logo(href="/")
+                    | Swanager .
                 ul
                     li
                         a(href="/") BUILDER
                     li
                         a(href="/") CLOUD
+
+                .github-star
+                    a.github-button(href="https://github.com/dokkur/swanager" data-style="mega" data-count-href="/dokkur/swanager/stargazers" data-count-api="/repos/dokkur/swanager#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star dokkur/swanager on GitHub") Star
+
+
         .page
             .container
                 .sidebar
@@ -42,5 +49,13 @@ html
                             a(href="/credentials") Credentials
                 .content
                     block content
-        block footer
-
+        .footer
+            .container
+                .credentials
+                    | Made with love by guys @<a href="https://dokkur.com">Dokkur</a>, 2017
+                ul.social
+                    li
+                        a(href="https://twitter.com/share" class="twitter-share-button" data-text="Check out this tool from @dokkur_com team!" data-size="large" data-hashtags="docker,cluster,swarm,swanager") Tweet
+                    li
+                        a.github-button(href="https://github.com/dokkur" data-style="mega" aria-label="Follow @dokkur on GitHub") Follow @dokkur
+        script(src="//platform.twitter.com/widgets.js")
