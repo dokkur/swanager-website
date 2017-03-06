@@ -1,3 +1,7 @@
 $(document).ready(function(){
-    console.log(location);
+    $('.sidebar ul li').each(function(){
+      if ($(this).find('a').attr('href') == location.pathname){
+        $(this).addClass('active');
+      }
+    });
 });

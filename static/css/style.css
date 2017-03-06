@@ -19,13 +19,15 @@ a{
 .container{
     position: relative;
     margin: 0 auto;
-    width: 100%;
-    max-width: 970px;
+    /*width: 100%;*/
+    /*max-width: 970px;*/
+    width: 970px;
     padding: 0 16px;
 }
 
 .header{
     width: 100%;
+    min-width: 970px;
     height: 3.5em;
     overflow: hidden;
     background: white;
@@ -79,7 +81,7 @@ a{
     width: 150px;
 }
 .sidebar ul{
-    padding: 0 0 0 20px;
+    padding: 8px 0 0 20px;
     margin: 0;
 }
 .sidebar ul li{
@@ -152,3 +154,37 @@ a{
     color: #6cc0e5;
 }
 
+/* API section */
+
+.api-object{
+  padding: 0 0 10px 0;
+}
+.api-object table{
+  border: 1px solid #6cc0e5;
+  border-collapse: collapse;
+  width: 100%;
+}
+.api-object table tr th{
+  background: #6cc0e5;
+}
+.api-object table tr td,
+.api-object table tr th{
+  padding: 3px 10px;
+  font-family: monospace;
+  font-size: 0.8em;
+  text-align: left;
+  border: 1px solid #41addd;
+}
+.api-object h3 a:hover{
+  text-decoration: underline;
+}
+.api-object h3 a span{
+  font-size: 0.8em;
+}
+.api-object pre{
+  font-family: monospace;
+  font-size: 0.8em;
+  background: aliceblue;
+  border: 3px;
+  padding: 15px;
+}
