@@ -16,6 +16,10 @@ a{
     color: inherit;
 }
 
+b{
+  font-family: inherit;
+}
+
 .small{
   font-size: 0.8em;
 }
