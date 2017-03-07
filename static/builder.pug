@@ -1,0 +1,18 @@
+extends layout
+
+block subtitle
+    | Builder
+
+block content
+    h1 Swanager Builder
+    p Swanager Builder is designed for building the Docker images.<br/>It's something like <a href="http://hub.docker.com">Docker Hub</a>'s "Automated Build" feature, but you can connect your own private registry to your GitHub and Bitbucket repos.
+    p <b>It's not a CI</b>, we provide the Build services using our scalable infrastructure with hundreds of nodes.
+    p The main Builder's purpose is to be a part of our <a href="/cloud">Cloud</a>, but it can be used separately.
+    p It can be a useful tool for you if you need to have build nodes "on demand" and you don't want to make your own GitHub/Bitbucket integrations during your development/delivery/continious iterations. Anyway the Builder module is designed to be integrated with your current infrastructure and the main work flow can be illustrated using this scheme:
+    p
+      img(src="/images/builder-scheme.png" width="100%")
+    p We support many-to-many relations between the repositories and Docker-registries.
+    p To get an access to public version of a Builder <a href="mailto:quota@swanager.com">drop us an email</a>
+    p If you're our existing consumer <a href="http://builder.swanager.com">login here</a>.
+    br/
+    br/
