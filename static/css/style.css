@@ -16,6 +16,10 @@ a{
     color: inherit;
 }
 
+.small{
+  font-size: 0.8em;
+}
+
 .container{
     position: relative;
     margin: 0 auto;
@@ -123,6 +127,7 @@ a{
 
 .footer{
     width: 100%;
+    min-width: 970px;
     background: white;
     box-shadow: 0 0 2px rgba(0,0,0,.5);
     display: inline-block;
@@ -187,4 +192,33 @@ a{
   background: aliceblue;
   border: 3px;
   padding: 15px;
+}
+
+.cloud-featuring tr td{
+  padding: 0 20px;
+}
+
+.support-plans{
+  border: 1px solid #6cc0e5;
+  border-collapse: collapse;
+  width: 100%;
+}
+.support-plans tr th{
+  background: #6cc0e5;
+}
+.support-plans tr td,
+.support-plans tr th{
+  padding: 10px 10px;
+  font-size: 0.8em;
+  text-align: left;
+  border: 1px solid #41addd;
+  vertical-align: top;
+}
+
+#dedicated-cluster-description{
+  font-size: 0.8em;
+  background: aliceblue;
+  border: 3px;
+  padding: 15px;
+  display: none;
 }

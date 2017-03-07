@@ -4,4 +4,9 @@ $(document).ready(function(){
         $(this).addClass('active');
       }
     });
+    $('#dedicated-cluster-toggle').click(function(e){
+      $('#dedicated-cluster-description').toggle();
+      e.preventDefault();
+      e.stopPropagation();
+    });
 });
