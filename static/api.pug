@@ -12,7 +12,7 @@ block content
         h3: a(href="#application") Application <span>&nbsp;&#128279;</span>
         table
             tr <th>name</th><th>type</th><th>description</th><th>note</th>
-            tr <td>id</td><td>string</td><td>Identificator</td><td>uuid</td>
+            tr <td>id</td><td>string</td><td>Identifier</td><td>uuid</td>
             tr <td>name</td><td>string</td><td>App name</td><td></td>
             tr <td>services</td><td>Array &lsaquo;Service&rsaquo;</td><td>Array of app's services objects</td><td>May not exist in the response</td>
             tr </td><td>service_ids</td><td>Array &lsaquo;String&rsaquo;</td><td>List of app's services IDs</td><td>May not exist in the response</td>
@@ -41,7 +41,7 @@ block content
             tr <td>replicas</td><td>int</td><td>Number of service's replicas</td><td></td>
             tr <td>parallelism</td><td>int</td><td>Number of simultaneously updating services</td><td></td>
             tr <td>status</td><td>Status object</td><td>Service's status</td><td>May not exist in the response</td>
-            tr <td>env</td><td>Array({name: '', value: ''})</td><td>Environmental variables for starting service</td><td></td>
+            tr <td>env</td><td>Array({name: '', value: ''})</td><td>Environment variables</td><td></td>
         h3 Example
         pre
             |// GET services/
@@ -69,7 +69,7 @@ block content
         h3: a(href="#job") Job <span>&nbsp;&#128279;</span>
         table
             tr <th>name</th><th>type</th><th>description</th><th>note</th>
-            tr <td>id</td><td>string</td><td>Identificator</td><td>uuid</td>
+            tr <td>id</td><td>string</td><td>Identifier</td><td>uuid</td>
             tr <td>state</td><td>string</td><td>Async job's status</td><td>working|success|error</td>
             tr <td>result</td><td>string</td><td>Job's result</td><td></td>
             tr <td>started_at</td><td>datetime</td><td>Time of job's beginning</td><td></td>
