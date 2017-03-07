@@ -9,7 +9,7 @@
   "devDependencies": {},
   "dependencies": {
     "express": "~4.9.x",
-    "pug": "~2.0.0",
+    "pug": "^2.0.0-beta11",
     "shelljs": "*"
   },
   "engines": {
