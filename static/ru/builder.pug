@@ -8,11 +8,12 @@ block content
     p Swanager Builder используется для разворачивания Docker образов.<br/>Это схоже со свойством "Automated Build" на <a href="http://hub.docker.com">Docker Hub</a>', но вы можете присоединить свой приватный registry к репозиторию на GitHub и Bitbucket.
     p <b>Это не CI</b>, мы предоставляем Build сервисы, используя собственную масштабируемую инфраструктуру с сотнями нод.
     p Builder входит в состав нашего сервиса <a href="/cloud">Cloud</a>, но может также использоваться отдельно.
-    p It can be a useful tool for you if you need to have build nodes "on demand" and you don't want to make your own GitHub/Bitbucket integrations during your development/delivery/continious iterations. Anyway the Builder module is designed to be integrated with your current infrastructure and the main work flow can be illustrated using this scheme:
+    p Данный инструмент будет полезен, если вам надо нужны ноды "по запросу" и если вы не хотите создавать собственную интеграцию с GitHub/Bitbucket во время различных циклах разработки (development/delivery/continious). Модуль Builder создан для того, чтобы интегрироваться в вашу текущую инфраструктуру, примерный способ работы показан на схеме ниже:
     p
       img(src="/images/builder-scheme.png" width="100%")
-    p We support many-to-many relations between the repositories and Docker-registries.
-    p To get an access to public version of a Builder <a href="mailto:quota@swanager.com">drop us an email</a>.
+    p Между репозиториями и Docker-registries мы поддерживаем отношения многие-ко-многим.
+    p Чтобы получить доступ к публичной версии Builder, <a href="mailto:quota@swanager.com">напишите нам на почту</a>.
     p If you're our existing consumer <a href="http://builder.swanager.com">login here</a>.
+    p Если вы уже существующий клиент - <a href="http://builder.swanager.com">войдите в систему</a>.
     br/
     br/
