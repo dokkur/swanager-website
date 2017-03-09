@@ -1,0 +1,66 @@
+extends layout
+
+block subtitle
+    | Cloud
+
+block content
+    h1 Swanager Cloud
+    p Swanager Cloud provides a reliable solution for cloud hosting of Dockerized applications. Using our partners' infrastructure, we give you installed Swanager and Swarm cluster(s) with scalability.
+    h2 Featuring:
+    table.cloud-featuring
+      tr
+        td
+          p
+            a(href="https://azure.microsoft.com" target="_blank")
+              img(src="/images/microsoft-azure.png" height="30")/
+              br/
+            |<b class="small">West Europe, Central US</b>
+        td
+          p
+            a(href="http://cloud.croc.ru/en/" target="_blank")
+              img(src="/images/croc-eng.png" height="30")/
+              br/
+            |<b class="small">RU Moscow</b>
+
+    h2 Pricing
+    p You may have a look at the <a href="https://azure.microsoft.com/en-us/pricing/calculator/" target="_blank">original Azure VMS prices</a> to calculate your business economy.</br>We do not charge you additionally, our one-time fee is <b>$500</b> per <a href="#" id="dedicated-cluster-toggle">dedicated cluster setup</a>.
+    p#dedicated-cluster-description
+      |By default we do setup of: VMs, Network, Storage Share (LVM + GlusterFS),<br/>Docker Swarm, Swanager and its modules.
+    p <a href="mailto:info@swanager.com">Feel free to contact us</a> if you need any help in designing your app's infrastructure topology. We can give you the rough estimate of your monthly usage if you provide us some information about your project.
+    h2#support Support
+    p
+      |<b>Important!</b> By default we do not provide any support services!<br/>
+      |If you're looking for support with guaranteed SLA, please have a look at our <b>Support Plans</b>:
+      table.support-plans
+        tr
+          th Plan
+          th Description
+          th Accessibility&nbsp;/&nbsp;Response&nbsp;Time
+          th Pricing
+        tr
+          td <b>A</b>
+          td <b>Critical business impact</b><br/>Your business has significant loss or degradation of services, and requires immediate attention.
+          td 24x7 access<br/>Response < 15 min
+          td $1000/mo
+        tr
+          td <b>B</b>
+          td <b>Moderate business impact</b><br/>Your business has moderate loss or degradation of services but work can reasonably continue in an impaired manner.
+          td Business hours access<br/>Response < 2 hr
+          td $500/mo
+        tr
+          td <b>C</b>
+          td <b>Minimum business impact</b><br/>Your business is functioning with minor impediments of services.
+          td Business hours access<br/>Response < 4 hr
+          td $100/mo
+
+    h2#sla SLA
+    p We trust in our providers' 99,9% uptime. Anyway, when we talk about uptime, it's very important to specify the exact module the reliable work of which we're talking about. Using Swarm clusters as the fundamental bricks of our infrastructure we can guarantee at least 99,9% uptime of all the running applications if reliability is not depending on your business logic.
+
+    h2 Public edition
+    p Our public edition is now in beta and limited to public access, but you may <a href="mailto:quota@swanager.com">request a quota</a>.
+    p If you're our existing consumer, <a href="http://cloud.swanager.com">login here</a>.
+
+
+
+    br/
+    br/

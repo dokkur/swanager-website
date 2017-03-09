@@ -1,0 +1,67 @@
+doctype html
+html
+    head
+        title: block title
+            block subtitle
+            |  |
+            | Swanager - a high-level tool for managing Docker clusters
+
+        link(rel="icon" href="/images/favicon.ico")
+        link(rel='stylesheet', href='/css/style.css')
+        script(src='/js/jquery-1.11.1.min.js')
+        script(src='/js/script.js')
+
+        block scripts
+    body
+        .header
+            .container
+                a.logo(href="/")
+                    | Swanager
+                ul
+                    li
+                        a(href="//builder.swanager.com" target="_blank") BUILDER
+                    li
+                        a(href="//cloud.swanager.com" target="_blank") CLOUD
+
+                .github-star
+                    a.github-button(href="https://github.com/dokkur/swanager" data-style="mega" data-count-href="/dokkur/swanager/stargazers" data-count-api="/repos/dokkur/swanager#stargazers_count" data-count-aria-label="# stargazers on GitHub" aria-label="Star dokkur/swanager on GitHub") Star
+
+
+        .page
+            .container
+                .sidebar
+                    ul
+                        li
+                            a(href="/ru/") Описание
+                        li
+                            a(href="/api") API
+                        li
+                            a(href="/cloud") Cloud
+                        li
+                            a(href="/builder") Builder
+                        li
+                            a(href="/cloud#support") Поддержка
+                        li
+                            a(href="/cloud#sla") SLA
+                        //li
+                            a(href="/faq") FAQ
+                        li
+                            a(href="/ru/usecases") Кейсы
+                        //li
+                            a(href="/licence") Licence
+                        //li
+                            a(href="/credentials") Credentials
+                .content
+                    block content
+        .footer
+            .container
+                .credentials
+                    | Сделано с любовью командой @<a href="https://dokkur.com">Dokkur</a>, 2017
+                ul.social
+                    li
+                        a(href="https://twitter.com/share" class="twitter-share-button" data-text="Check out this tool from @dokkur_com team!" data-size="large" data-hashtags="docker,cluster,swarm,swanager") Tweet
+                    li
+                        a.github-button(href="https://github.com/dokkur" data-style="mega" aria-label="Follow @dokkur on GitHub") Follow @dokkur
+
+        script(src="//platform.twitter.com/widgets.js")
+        script(async defer src="https://buttons.github.io/buttons.js")
