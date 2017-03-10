@@ -10,8 +10,16 @@ app.get('/', function(request, response) {
     response.render('index');
 });
 
+app.get('/ru', function(request, response) {
+    response.render('ru/index');
+});
+
 app.get('/:page', function(request, response) {
     response.render(request.params.page);
+});
+
+app.get('/ru/:page', function(request, response) {
+    response.render('ru/' + request.params.page);
 });
 
 app.use(express.static(__dirname + '/static'));
