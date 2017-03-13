@@ -240,3 +240,30 @@ b{
   padding: 15px;
   display: none;
 }
+
+.quota ul{
+    float: right;
+    margin: .5em;
+    padding: 0;
+}
+.quota ul li{
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 0 0px;
+    padding: 0;
+}
+
+.quota ul li a{
+    font-size: .8em;
+    text-transform: uppercase;
+    padding: .5em 1.5em;
+    border: 1px solid #03902e;
+    border-radius: 3px;
+    /*user-select: none;*/
+    color: #03902e;
+    font-weight: normal;
+}
+.quota ul li a:hover{
+    background: #03902e;
+    color: white;
+}
