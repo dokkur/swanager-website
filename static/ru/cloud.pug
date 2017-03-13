@@ -4,7 +4,12 @@ block subtitle
     | Cloud
 
 block content
+    .quota
+        ul
+          li
+            a(href="mailto:quota@swanager.com") Запросить квоту
     h1 Swanager Cloud
+    
     p Swanager Cloud - это надежное решение для облачного хостинга приложений на Docker. Используя инфраструктуру наших партнеров, мы даем вам установленный Swanager на масштабируемых Swarm кластерах.
     h2 Представляем наших партнеров:
     table.cloud-featuring
@@ -23,13 +28,12 @@ block content
             |<b class="small">RU Moscow</b>
 
     h2 Цены
-    p Вы можете посмотреть на <a href="https://azure.microsoft.com/en-us/pricing/calculator/" target="_blank">ценовую политику Azure VMS</a>, чтобы просчитать экономику своего бизнеса.</br>К этой стоимости мы ничего не прибавляем, вы совершаете единовременный платеж в размере <b>$500</b> за <a href="#" id="dedicated-cluster-toggle">установку кластера</a>.
+    p Вы можете посмотреть на <a href="https://azure.microsoft.com/en-us/pricing/calculator/" target="_blank">ценовую политику Azure VMS</a>, чтобы просчитать экономику своего бизнеса.</br>К этой стоимости мы ничего не прибавляем, вы совершаете единовременный платеж в размере <b>$2,400</b> за <a href="#" id="dedicated-cluster-toggle">установку кластера</a>. <br/><u>Тарифный план <b>A</b> доступен по умолчанию.</u>
     p#dedicated-cluster-description
       |По умолчанию мы устанавливаем: VMs, Network, Storage Share (LVM + GlusterFS),<br/>Docker Swarm, Swanager и его модули.
     p <a href="mailto:info@swanager.com">Напишите нам</a>, если вам нужна какая-либо помощь в создании топологии вашей инфраструктуры. Мы сможем дать вам примерную информацию по месячному использованию, если вы предоставите нам больше информации о своем проекте.
     h2#support Поддержка
     p
-      |<b>Важно!</b> По умолчанию мы не предоставляем какие-либо услуги по поддержке!<br/>
       |Если вам нужна поддержка с гарантированным SLA, ознакомьтесь с нашими <b>Тарифными Планами Поддержки</b>:
       table.support-plans
         tr
