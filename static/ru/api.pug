@@ -1,0 +1,160 @@
+extends layout
+
+block subtitle
+    | API
+
+block content
+    h1 Документация Swanager API
+    p Пока разработка находится в процессе, здесь могут быть упущены некоторые объекты/методы.<br/>Пожалуйста, следите за <a href="https://github.com/dokkur/swanager" target="_blank">основным репозиторием</a> на предмет обновлений.
+    h2 Объекты
+
+    .api-object#application
+        h3: a(href="#application") Application <span>&nbsp;&#128279;</span>
+        table
+            tr <th>название</th><th>тип</th><th>описание</th><th>примечание</th>
+            tr <td>id</td><td>string</td><td>Идентификатор</td><td>uuid</td>
+            tr <td>name</td><td>string</td><td>Название приложения</td><td></td>
+            tr <td>services</td><td>Array &lsaquo;Service&rsaquo;</td><td>Массив сервисов</td><td>Может не быть в ответе</td>
+            tr </td><td>service_ids</td><td>Array &lsaquo;String&rsaquo;</td><td>Список ID сервисов приложения</td><td>Может не быть в ответе</td>
+
+        h3 Пример
+        pre
+            |// GET apps/
+            |{"applications":[
+            |    {
+            |        "id":"fa3e61fd-9281-e6c0-58bb-59bc6c710431b217b60617c743ea",
+            |        "name":"Super app",
+            |        "services":null,
+            |        "service_ids":null
+            |    }]
+            |}
+
+    .api-object#service
+        h3: a(href="#service") Service <span>&nbsp;&#128279;</span>
+        table
+            tr <th>название</th><th>тип</th><th>описание</th><th>примечание</th>
+            tr <td>id</td><td>string</td><td>Идентификатор</td><td>uuid</td>
+            tr <td>application_id</td><td>string</td><td>Идентификатор приложения, к которому относится сервис</td><td></td>
+            tr <td>name</td><td>string</td><td>Название сервиса</td><td></td>
+            tr <td>image</td><td>string</td><td>Docker образ сервиса</td><td></td>
+            tr <td>ns_name</td><td>string</td><td>Host для связывания систем (url)</td><td></td>
+            tr <td>replicas</td><td>int</td><td>Кол-во реплик в сервисе</td><td></td>
+            tr <td>parallelism</td><td>int</td><td>Кол-во одновременно обновляемых сервисов</td><td></td>
+            tr <td>status</td><td>Status object</td><td>Статус сервиса</td><td>Может не быть в ответе</td>
+            tr <td>env</td><td>Array({name: '', value: ''})</td><td>Переменные окружения для запуска сервиса</td><td></td>
+        h3 Пример
+        pre
+            |// GET services/
+            |{"services":[
+            |    {
+            |        "id":"feab2ca0-d28a-0553-b526-9c9418816317389c87e26711f6ee",
+            |        "name":"nginx",
+            |        "image":"nginx:latest",
+            |        "ns_name":"super-app-nginx-2f425548",
+            |        "replicas":2,
+            |        "parallelism":0,
+            |        "status":[
+            |            {
+            |                "replica_id":"",
+            |                "node":"",
+            |                "status":"not_exists",
+            |                "timestamp":"0001-01-01T00:00:00Z"
+            |            }
+            |        ],
+            |        "application_id":"fa3e61fd-9281-e6c0-58bb-59bc6c710431b217b60617c743ea"
+            |    }]
+            |}
+
+    .api-object#job
+        h3: a(href="#job") Job <span>&nbsp;&#128279;</span>
+        table
+            tr <th>название</th><th>тип</th><th>описание</th><th>примечание</th>
+            tr <td>id</td><td>string</td><td>Идентификатор</td><td>uuid</td>
+            tr <td>state</td><td>string</td><td>Состояние асинхронного задания</td><td>working|success|error</td>
+            tr <td>result</td><td>string</td><td>Результат работы задания</td><td></td>
+            tr <td>started_at</td><td>datetime</td><td>Время начала работы</td><td></td>
+            tr <td>finished_at</td><td>datetime</td><td>Время окончания работы</td><td></td>
+        h3 Example
+        pre
+            |// GET jobs/2fbbfe1e-f821-b4ad-ad9f-98bb173b3cf2e5de1095311b6fe2
+            |{"job": {
+            |        "id":"2fbbfe1e-f821-b4ad-ad9f-98bb173b3cf2e5de1095311b6fe2",
+            |        "state" : "success"
+            |        "result" : {
+            |            "id" : "d0732664-837b-9f79-6c2a-983d85138d38e2b93eb248203346",
+            |            "name" : "Nginx with Something",
+            |        },
+            |        "started_at" : "2017-02-11T14:54:31.325Z",
+            |        "finished_at" : "2017-02-11T14:54:31.350Z"
+            |    }
+            |}
+
+    .api-object#statitem
+        h3: a(href="#statitem") StatItem <span>&nbsp;&#128279;</span>
+        table
+            tr <th>название</th><th>тип</th><th>описание</th><th>примечание</th>
+            tr <td>user_email</td><td>string</td><td>Email пользователя</td><td></td>
+            tr <td>application_id</td><td>string</td><td>ID приложения</td><td></td>
+            tr <td>application_name</td><td>string</td><td>Имя приложения</td><td></td>
+            tr <td>service_id</td><td>string</td><td>ID сервиса</td><td></td>
+            tr <td>service_name</td><td>string</td><td>Имя сервиса</td><td></td>
+            tr <td>replica_id</td><td>string</td><td>ID реплики</td><td></td>
+            tr <td>status</td><td>string</td><td>created|restarting|running|removing|paused|exited|dead</td><td></td>
+            tr <td>timestamp</td><td>datetime</td><td>Время, с которого сервис находится в этом статусе</td><td></td>
+        h3 Example
+        pre
+            |// GET stat/
+            |{
+            |   "stats":[
+            |      {
+            |         "user_email":"mail@example.com",
+            |         "application_name":"Super app",
+            |         "application_id":"fa3e61fd-9281-e6c0-58bb-59bc6c710431b217b60617c743ea",
+            |         "service_id":"feab2ca0-d28a-0553-b526-9c9418816317389c87e26711f6ee",
+            |         "service_name":"nginx",
+            |         "replica_id":"tbkx3jf6ce2yd4scmi55ezly5",
+            |         "status":"running",
+            |         "timestamp":"2017-02-12T12:29:36.291284729Z"
+            |      },
+            |      {
+            |         "user_email":"mail@example.com",
+            |         "application_name":"Super app",
+            |         "application_id":"fa3e61fd-9281-e6c0-58bb-59bc6c710431b217b60617c743ea",
+            |         "service_id":"feab2ca0-d28a-0553-b526-9c9418816317389c87e26711f6ee",
+            |         "service_name":"nginx",
+            |         "replica_id":"tzxrs8ssrw9loedqktcgzxesb",
+            |         "status":"running",
+            |         "timestamp":"2017-02-12T12:29:35.646056597Z"
+            |      }
+            |   ]
+            |}
+
+    .api-object#status
+        h3: a(href="#status") Status <span>&nbsp;&#128279;</span>
+        table
+            tr <th>название</th><th>тип</th><th>описание</th><th>примечание</th>
+            tr <td>node</td><td>string</td><td>Идентификатор ноды, на которой запущена реплика</td><td></td>
+            tr <td>replica_id</td><td>string</td><td>ID реплики</td><td></td>
+            tr <td>status</td><td>string</td><td>Статус реплики</td><td></td>
+            tr <td>timestamp</td><td>string</td><td>Время последнего изменения статуса</td><td></td>
+        h3 Example
+        pre
+            |{
+            |    node:"sluxo425f0lkgeq6o5u1w5ybu"
+            |    replica_id:"dq16q138wgmz7qx1f78idummv"
+            |    status:"running"
+            |    timestamp:"2017-02-11T15:49:10.466014357Z"
+            |}
+
+    .api-object#token
+        h3: a(href="#token") Token <span>&nbsp;&#128279;</span>
+        table
+            tr <th>название</th><th>тип</th><th>описание</th><th>примечание</th>
+            tr <td>token</td><td>string</td><td>a token</td><td>uuid</td>
+        h3 Example
+        pre
+            |// POST sessions/
+            |{"token": "fa3e61fd-9281-e6c0-58bb-59bc6c710431b217b60617c743ea"}
+
+    br/
+    br/

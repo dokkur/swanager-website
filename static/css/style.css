@@ -74,6 +74,20 @@ b, u{
     background: #6cc0e5;
     color: white;
 }
+
+
+.header ul li a.lang{
+    border: 1px solid grey;
+    /*user-select: none;*/
+    color: grey;
+    font-weight: normal;
+}
+
+.header ul li a.lang:hover{
+    background: grey !important;
+    color: white;
+}
+
 .header .github-star{
     float: right;
 }
