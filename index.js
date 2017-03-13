@@ -6,6 +6,8 @@ app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/static');
 app.set('view engine', 'pug');
 
+app.use(express.static(__dirname + '/static'));
+
 app.get('/', function(request, response) {
     response.render('index');
 });
@@ -21,8 +23,6 @@ app.get('/:page', function(request, response) {
 app.get('/ru/:page', function(request, response) {
     response.render('ru/' + request.params.page);
 });
-
-app.use(express.static(__dirname + '/static'));
 
 app.listen(app.get('port'), function() {
     console.log('Node app is running on port', app.get('port'));
