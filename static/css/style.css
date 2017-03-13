@@ -24,6 +24,10 @@ b, u{
   font-size: 0.8em;
 }
 
+.float-right{
+  float: right;
+}
+
 .container{
     position: relative;
     margin: 0 auto;
@@ -242,7 +246,6 @@ b, u{
 }
 
 .quota ul{
-    float: right;
     margin: .5em;
     padding: 0;
 }
@@ -260,8 +263,9 @@ b, u{
     border: 1px solid #03902e;
     border-radius: 3px;
     /*user-select: none;*/
-    color: #03902e;
     font-weight: normal;
+    background: #03902e;
+    color: white;
 }
 .quota ul li a:hover{
     background: #03902e;
