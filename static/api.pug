@@ -159,11 +159,44 @@ block content
     br/
     br/
     
-    .api-object#port
-    	h3: a(href="#port") Port <span>&nbsp;&#128279;</span>
-	table
-		tr <th>name</th><th>type</th><th>description</th><th>note</th>
-		tr <td>internal</td><td>int</td><td>Container port</td><td></td>
-		tr <td>external</td><td>int</td><td>External port</td><td></td>
-		tr <td>protocol</td><td>string</td><td>Protocol</td><td>tcp/udp</td>
+	.api-object#port
+    h3: a(href="#port") Port <span>&nbsp;&#128279;</span>
+    table
+	    tr <th>name</th><th>type</th><th>description</th><th>note</th>
+	    tr <td>internal</td><td>int</td><td>Container port</td><td></td>
+	    tr <td>external</td><td>int</td><td>External port</td><td></td>
+	    tr <td>protocol</td><td>string</td><td>Protocol</td><td>tcp/udp</td>
+	
+	br/
+    br/
+    
+	h2 Methods	
+	.api-method#service-create
+    h3: a(href="#service-create") Service.create <span>&nbsp;&#128279;</span>
+    p Creates service
+    p Required user authorization
+		
+    table
+        tr <th>Method</th><th>URL</th>
+        tr <td>POST</td><td>/api/v1/services</td>
+		
+    p <i><b>Parameters:</i></b>
+    table
+        tr <th>№</th><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+        tr <td>1</td><td>application_id</td><td>string</td><td></td><td>Application id</td><td></td>
+        tr <td>2</td><td>name</td><td>string</td><td></td><td>Application name</td><td></td>
+        tr <td>3</td><td>image</td><td>string</td><td></td><td>Docker image</td><td></td>
+        tr <td>4</td><td>replicas</td><td>int</td><td></td><td>Replicas number</td><td></td>
+        tr <td>5</td><td>published_ports</td><td>array[<a href="#port">Port Object</a>]</td><td></td><td></td><td></td>
+		tr <td>6</td><td>volumes</td><td>array[string]</td><td></td><td></td><td></td>
+		
+    h3: Result
+    table
+        tr <th>№</th><th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+        tr <td>1</td><td>service</td><td><a href="#service">Service</a></td><td>Created service</td><td></td>
+		
+    h3: Errors
+    table
+        tr <th>№</th><th>Name</th><th>Code</th><th>Text</th><th>Description</th>
+        tr <td></td><td></td><td></td><td></td><td></td>
                 
