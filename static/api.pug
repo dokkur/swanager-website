@@ -161,7 +161,8 @@ block content
     
     .api-object#port
         h3: a(href="#port") Port <span>&nbsp;&#128279;</span>
-        table
+        p Port, which is opened from container to outside
+	table
             tr <th>name</th><th>type</th><th>description</th><th>note</th>
             tr <td>internal</td><td>int</td><td>Container port</td><td></td>
             tr <td>external</td><td>int</td><td>External port</td><td></td>
@@ -187,7 +188,7 @@ block content
             tr <td>2</td><td>name</td><td>string</td><td></td><td>Application name</td><td></td>
             tr <td>3</td><td>image</td><td>string</td><td></td><td>Docker image</td><td></td>
             tr <td>4</td><td>replicas</td><td>int</td><td></td><td>Replicas number</td><td></td>
-            tr <td>5</td><td>published_ports</td><td>array[<a href="#port">Port Object</a>]</td><td></td><td></td><td></td>
+            tr <td>5</td><td>published_ports</td><td>array[<a href="#port">Port</a>]</td><td></td><td></td><td></td>
             tr <td>6</td><td>volumes</td><td>array[string]</td><td></td><td></td><td></td>
 		
         h3: Result
