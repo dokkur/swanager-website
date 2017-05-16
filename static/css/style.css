@@ -202,6 +202,14 @@ b, u{
   text-align: left;
   border: 1px solid #41addd;
 }
+.api-object table tr td a{
+  font-family: monospace;
+  font-size: 1em;
+  text-align: left;
+}
+.api-object table tr td a:hover{
+  text-decoration: underline;
+}
 .api-object h3 a:hover{
   text-decoration: underline;
 }
