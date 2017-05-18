@@ -203,9 +203,9 @@ block content
     br/
     br/
                 
-    .api-object#service-create
-        h3: a(href="#service-create") Service.create <span>&nbsp;&#128279;</span>
-        p Deletes service (May cause an applications inconsistency if these services are associated with other services)
+    .api-object#service-delete
+        h3: a(href="#service-delete") Service.delete <span>&nbsp;&#128279;</span>
+        p Deletes service (Can cause an applications inconsistency if these services are associated with other services)
         p Required user authorization
 		
         table
@@ -228,6 +228,28 @@ block content
             tr <td>1</td><td>404</td><td>Service not found</td><td></td>
 	    tr <td>2</td><td>422</td><td>Unprocessable entity</td><td></td>
             
+    br/
+    br/
+    
+    .api-object#service-list
+        h3: a(href="#service-list") Service.list <span>&nbsp;&#128279;</span>
+        p Returns services list for current user
+        p Required user authorization
+		
+        table
+            tr <th>Method</th><th>URL</th>
+            tr <td>GET</td><td>/api/v1/services</td>
+		
+        p <i><b>Parameters:</i></b>
+        table
+            tr <td>№</td><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td>1</td><td>app_id</td><td>string</td><td></td><td>Applications filter</td><td></td>
+            		
+        h3 Result
+        table
+            tr <td>№</td><th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>1</td><td>service</td><td>Array&lt<a href="#service">Service</a>&gt</td><td>Applications list</td><td></td>
+           
     br/
     br/
     
