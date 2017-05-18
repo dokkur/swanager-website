@@ -7,12 +7,14 @@ block content
     h1 Swanager API basic features
     p While the main development is in progress, there may be a lot of missing objects/methods.<br/>Please, track our <a href="https://github.com/dokkur/swanager" target="_blank">main repo</a> to get all the updates.
     
-    #authrorization-rule
+    .api-object#authrorization-rule
         h2 Authrorization 
         p Authrorization occurs by sending token in header
-        p Example:
-        p <code>authorization: 97fea45d-9f25-29e4-7030-d89a283f1c7246fbe9fe9bb317ef</code>
-	
+        
+        h3 Example:
+        pre
+            |authorization: 97fea45d-9f25-29e4-7030-d89a283f1c7246fbe9fe9bb317ef
+		
     h2 Objects
 
     .api-object#application
@@ -232,8 +234,8 @@ block content
         h3 Errors
         table
             tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
-            tr <td>404</td><td>Service not found</td><td></td>
-	    tr <td>422</td><td>Unprocessable entity</td><td></td>
+            tr <td>404</td><td>Service not found</td><td></td><td></td>
+            tr <td>422</td><td>Unprocessable entity</td><td></td><td></td>
             
     br/
     br/
@@ -279,12 +281,12 @@ block content
             tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
             tr <td>service</td><td><a href="#service">Service</a></td><td>Service</td><td></td>
             tr <td>status</td><td>array[ServiceStatus]</td><td>List of service replica statuses</td><td></td>
-	    tr <td>status_error</td><td>string</td><td>Service status errors</td><td></td>
+            tr <td>status_error</td><td>string</td><td>Service status errors</td><td></td>
 	  
-	h3 Errors
+        h3 Errors
         table
             tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
-            tr <td>400</td><td>Service not found</td><td></td>  
+            tr <td>400</td><td>Service not found</td><td></td><td></td>
 
     br/
     br/
@@ -293,7 +295,7 @@ block content
         h3: a(href="#service-start") Service.start <span>&nbsp;&#128279;</span>
         p Asynchronously starts service
         p <a href="#authrorization-rule">Required user authorization</a>
-	p To get realtime service status update, you can join push notifications websocket channel 
+        p To get realtime service status update, you can join push notifications websocket channel 
 	
         table
             tr <th>Method</th><th>URL</th>
@@ -303,17 +305,17 @@ block content
         table
             tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
             tr <td>service_id</td><td>string</td><td></td><td>Service ID</td><td></td>
-            		
+            
         h3 Result
         table
             tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
             tr <td>job_id</td><td>string</td><td>Job ID</td><td></td>
             tr <td>url</td><td>string</td><td>URL for job status request</td><td></td>
 	    
-	h3 Errors
+        h3 Errors
         table
             tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
-            tr <td>400</td><td>Service not found</td><td></td>  
+            tr <td>400</td><td>Service not found</td><td></td><td></td>  
 
     br/
     br/
@@ -322,7 +324,7 @@ block content
         h3: a(href="#service-stop") Service.stop <span>&nbsp;&#128279;</span>
         p Asynchronously stops service
         p <a href="#authrorization-rule">Required user authorization</a>
-	p To get realtime service status update, you can join push notifications websocket channel 
+        p To get realtime service status update, you can join push notifications websocket channel 
 	
         table
             tr <th>Method</th><th>URL</th>
@@ -339,7 +341,7 @@ block content
             tr <td>job_id</td><td>string</td><td>Job ID</td><td></td>
             tr <td>url</td><td>string</td><td>URL for job status request</td><td></td>
 	    
-	h3 Errors
+        h3 Errors
         table
             tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
             tr <td>Not found</td><td>400</td><td>Service not found</td><td></td>  
@@ -360,7 +362,7 @@ block content
         table
             tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
             tr <td></td><td><a href="#service">Service</a></td><td></td><td>Service</td><td></td>
-	    tr <td>service_id</td><td>string</td><td></td><td>Service ID</td><td></td>
+            tr <td>service_id</td><td>string</td><td></td><td>Service ID</td><td></td>
             		
         h3 Result
         table
@@ -368,7 +370,7 @@ block content
             tr <td>service</td><td><a href="#service">Service</a></td><td>Service</td><td></td>
             tr <td>service_status</td><td>array[ServiceStatus]</td><td>List of service replica statuses</td><td></td>
 	    
-	h3 Errors
+        h3 Errors
         table
             tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
             tr <td>Not found</td><td>404</td><td>Service not found</td><td></td>  
