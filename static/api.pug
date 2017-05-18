@@ -339,3 +339,32 @@ block content
 
     br/
     br/
+    
+    .api-object#service-update
+        h3: a(href="#service-update") Service.update <span>&nbsp;&#128279;</span>
+        p Updates service
+        p Required user authorization 
+	
+        table
+            tr <th>Method</th><th>URL</th>
+            tr <td>PUT</td><td>/api/v1/services/:service_id</td>
+		
+        p <i><b>Parameters:</i></b>
+        table
+            tr <td>№</td><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td>1</td><td></td><td><a href="#service">Service</a></td><td></td><td>Service</td><td></td>
+	    tr <td>1</td><td>service_id</td><td>string</td><td></td><td>Service ID</td><td></td>
+            		
+        h3 Result
+        table
+            tr <td>№</td><th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>1</td><td>service</td><td><a href="#service">Service</a></td><td>Service</td><td></td>
+            tr <td>2</td><td>service_status</td><td>Array[ServiceStatus]</td><td>List of service replica statuses</td><td></td>
+	    
+	h3 Errors
+        table
+            tr <td>№</td><th>Name</th><th>Code</th><th>Text</th><th>Description</th>
+            tr <td>1</td><td>404</td><td>Service not found</td><td></td>  
+
+    br/
+    br/
