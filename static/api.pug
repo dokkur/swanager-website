@@ -6,6 +6,12 @@ block subtitle
 block content
     h1 Swanager API basic features
     p While the main development is in progress, there may be a lot of missing objects/methods.<br/>Please, track our <a href="https://github.com/dokkur/swanager" target="_blank">main repo</a> to get all the updates.
+    
+    #authrorization-rule
+        p Authrorization occurs by sending token in header
+	p Example:
+	p <code>authorization: 97fea45d-9f25-29e4-7030-d89a283f1c7246fbe9fe9bb317ef</code>
+	
     h2 Objects
 
     .api-object#application
@@ -174,7 +180,7 @@ block content
     .api-object#service-create
         h3: a(href="#service-create") Service.create <span>&nbsp;&#128279;</span>
         p Creates service
-        p Required user authorization
+        p <a href="#authrorization-rule">Required user authorization</a>
 		
         table
             tr <th>Method</th><th>URL</th>
@@ -206,7 +212,7 @@ block content
     .api-object#service-delete
         h3: a(href="#service-delete") Service.delete <span>&nbsp;&#128279;</span>
         p Deletes service (Can cause an applications inconsistency if these services are associated with other services)
-        p Required user authorization
+        p <a href="#authrorization-rule">Required user authorization</a>
 		
         table
             tr <th>Method</th><th>URL</th>
@@ -234,7 +240,7 @@ block content
     .api-object#service-list
         h3: a(href="#service-list") Service.list <span>&nbsp;&#128279;</span>
         p Returns services list for current user
-        p Required user authorization
+        p <a href="#authrorization-rule">Required user authorization</a>
 		
         table
             tr <th>Method</th><th>URL</th>
@@ -256,7 +262,7 @@ block content
     .api-object#service-show
         h3: a(href="#service-show") Service.show <span>&nbsp;&#128279;</span>
         p Returns service by id with current user state
-        p Required user authorization
+        p <a href="#authrorization-rule">Required user authorization</a>
 		
         table
             tr <th>Method</th><th>URL</th>
@@ -285,7 +291,7 @@ block content
     .api-object#service-start
         h3: a(href="#service-start") Service.start <span>&nbsp;&#128279;</span>
         p Asynchronously starts service
-        p Required user authorization
+        p <a href="#authrorization-rule">Required user authorization</a>
 	p To get realtime service status update, you can join push notifications websocket channel 
 	
         table
@@ -314,7 +320,7 @@ block content
     .api-object#service-stop
         h3: a(href="#service-stop") Service.stop <span>&nbsp;&#128279;</span>
         p Asynchronously stops service
-        p Required user authorization
+        p <a href="#authrorization-rule">Required user authorization</a>
 	p To get realtime service status update, you can join push notifications websocket channel 
 	
         table
@@ -343,7 +349,7 @@ block content
     .api-object#service-update
         h3: a(href="#service-update") Service.update <span>&nbsp;&#128279;</span>
         p Updates service
-        p Required user authorization 
+        p <a href="#authrorization-rule">Required user authorization</a> 
 	
         table
             tr <th>Method</th><th>URL</th>
