@@ -212,7 +212,7 @@ block content
                 
     .api-object#service-delete
         h3: a(href="#service-delete") Service.delete <span>&nbsp;&#128279;</span>
-        p Deletes service (Can cause an applications inconsistency if these services are associated with other services)
+        p Deletes service (Can cause applications inconsistency if these services are associated with other services)
         p <a href="#authrorization-rule">Required user authorization</a>
 		
         table
@@ -231,9 +231,9 @@ block content
 	    		
         h3 Errors
         table
-            tr <td>№</td><th>Name</th><th>Code</th><th>Text</th><th>Description</th>
-            tr <td>1</td><td>404</td><td>Service not found</td><td></td>
-	    tr <td>2</td><td>422</td><td>Unprocessable entity</td><td></td>
+            tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
+            tr <td>404</td><td>Service not found</td><td></td>
+	    tr <td>422</td><td>Unprocessable entity</td><td></td>
             
     br/
     br/
@@ -249,13 +249,13 @@ block content
 		
         p <i><b>Parameters:</i></b>
         table
-            tr <td>№</td><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
-            tr <td>1</td><td>app_id</td><td>string</td><td></td><td>Application filter</td><td></td>
+            tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td>app_id</td><td>string</td><td></td><td>Application filter</td><td></td>
             		
         h3 Result
         table
-            tr <td>№</td><th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
-            tr <td>1</td><td>service</td><td>array[<a href="#service">Service</a>]</td><td>Services list</td><td></td>
+            tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>service</td><td>array[<a href="#service">Service</a>]</td><td>Services list</td><td></td>
            
     br/
     br/
@@ -271,20 +271,20 @@ block content
 		
         p <i><b>Parameters:</i></b>
         table
-            tr <td>№</td><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
-            tr <td>1</td><td>service_id</td><td>string</td><td></td><td>Service ID</td><td></td>
+            tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td>service_id</td><td>string</td><td></td><td>Service ID</td><td></td>
             		
         h3 Result
         table
-            tr <td>№</td><th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
-            tr <td>1</td><td>service</td><td><a href="#service">Service</a></td><td>Service</td><td></td>
-            tr <td>2</td><td>status</td><td>array[ServiceStatus]</td><td>List of service replica statuses</td><td></td>
-	    tr <td>3</td><td>status_error</td><td>string</td><td>Service status errors</td><td></td>
+            tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>service</td><td><a href="#service">Service</a></td><td>Service</td><td></td>
+            tr <td>status</td><td>array[ServiceStatus]</td><td>List of service replica statuses</td><td></td>
+	    tr <td>status_error</td><td>string</td><td>Service status errors</td><td></td>
 	  
 	h3 Errors
         table
-            tr <td>№</td><th>Name</th><th>Code</th><th>Text</th><th>Description</th>
-            tr <td>1</td><td>400</td><td>Service not found</td><td></td>  
+            tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
+            tr <td>400</td><td>Service not found</td><td></td>  
 
     br/
     br/
@@ -301,19 +301,19 @@ block content
 		
         p <i><b>Parameters:</i></b>
         table
-            tr <td>№</td><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
-            tr <td>1</td><td>service_id</td><td>string</td><td></td><td>Service ID</td><td></td>
+            tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td>service_id</td><td>string</td><td></td><td>Service ID</td><td></td>
             		
         h3 Result
         table
-            tr <td>№</td><th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
-            tr <td>1</td><td>job_id</td><td>string</td><td>Job ID</td><td></td>
-            tr <td>2</td><td>url</td><td>string</td><td>URL for job status request</td><td></td>
+            tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>job_id</td><td>string</td><td>Job ID</td><td></td>
+            tr <td>url</td><td>string</td><td>URL for job status request</td><td></td>
 	    
 	h3 Errors
         table
-            tr <td>№</td><th>Name</th><th>Code</th><th>Text</th><th>Description</th>
-            tr <td>1</td><td>400</td><td>Service not found</td><td></td>  
+            tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
+            tr <td>400</td><td>Service not found</td><td></td>  
 
     br/
     br/
@@ -330,19 +330,19 @@ block content
 		
         p <i><b>Parameters:</i></b>
         table
-            tr <td>№</td><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
-            tr <td>1</td><td>service_id</td><td>string</td><td></td><td>Service ID</td><td></td>
+            tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td>service_id</td><td>string</td><td></td><td>Service ID</td><td></td>
             		
         h3 Result
         table
-            tr <td>№</td><th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
-            tr <td>1</td><td>job_id</td><td>string</td><td>Job ID</td><td></td>
-            tr <td>2</td><td>url</td><td>string</td><td>URL for job status request</td><td></td>
+            tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>job_id</td><td>string</td><td>Job ID</td><td></td>
+            tr <td>url</td><td>string</td><td>URL for job status request</td><td></td>
 	    
 	h3 Errors
         table
-            tr <td>№</td><th>Name</th><th>Code</th><th>Text</th><th>Description</th>
-            tr <td>1</td><td>400</td><td>Service not found</td><td></td>  
+            tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
+            tr <td>Not found</td><td>400</td><td>Service not found</td><td></td>  
 
     br/
     br/
@@ -358,20 +358,20 @@ block content
 		
         p <i><b>Parameters:</i></b>
         table
-            tr <td>№</td><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
-            tr <td>1</td><td></td><td><a href="#service">Service</a></td><td></td><td>Service</td><td></td>
-	    tr <td>1</td><td>service_id</td><td>string</td><td></td><td>Service ID</td><td></td>
+            tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td></td><td><a href="#service">Service</a></td><td></td><td>Service</td><td></td>
+	    tr <td>service_id</td><td>string</td><td></td><td>Service ID</td><td></td>
             		
         h3 Result
         table
-            tr <td>№</td><th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
-            tr <td>1</td><td>service</td><td><a href="#service">Service</a></td><td>Service</td><td></td>
-            tr <td>2</td><td>service_status</td><td>array[ServiceStatus]</td><td>List of service replica statuses</td><td></td>
+            tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>service</td><td><a href="#service">Service</a></td><td>Service</td><td></td>
+            tr <td>service_status</td><td>array[ServiceStatus]</td><td>List of service replica statuses</td><td></td>
 	    
 	h3 Errors
         table
-            tr <td>№</td><th>Name</th><th>Code</th><th>Text</th><th>Description</th>
-            tr <td>1</td><td>404</td><td>Service not found</td><td></td>  
+            tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
+            tr <td>Not found</td><td>404</td><td>Service not found</td><td></td>  
 
     br/
     br/
