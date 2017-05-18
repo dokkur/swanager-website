@@ -311,3 +311,31 @@ block content
     br/
     br/
     
+    .api-object#service-stop
+        h3: a(href="#service-stop") Service.stop <span>&nbsp;&#128279;</span>
+        p Asynchronously stops service
+        p Required user authorization
+	p To get realtime service status update, you can join push notifications websocket channel 
+	
+        table
+            tr <th>Method</th><th>URL</th>
+            tr <td>PUT</td><td>/api/v1/services/:service_id/stop</td>
+		
+        p <i><b>Parameters:</i></b>
+        table
+            tr <td>№</td><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td>1</td><td>service_id</td><td>string</td><td></td><td>Service ID</td><td></td>
+            		
+        h3 Result
+        table
+            tr <td>№</td><th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>1</td><td>job_id</td><td>string</td><td>Job ID</td><td></td>
+            tr <td>2</td><td>url</td><td>string</td><td>URL for job status request</td><td></td>
+	    
+	h3 Errors
+        table
+            tr <td>№</td><th>Name</th><th>Code</th><th>Text</th><th>Description</th>
+            tr <td>1</td><td>400</td><td>Service not found</td><td></td>  
+
+    br/
+    br/
