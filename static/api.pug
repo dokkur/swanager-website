@@ -203,5 +203,31 @@ block content
     br/
     br/
                 
-    //Comment to test pull-request (from copywriter Alexander Piskunov)
+    .api-object#service-create
+        h3: a(href="#service-create") Service.create <span>&nbsp;&#128279;</span>
+        p Deletes service (May cause an applications inconsistency if these services are associated with other services)
+        p Required user authorization
+		
+        table
+            tr <th>Method</th><th>URL</th>
+            tr <td>DELETE</td><td>/api/v1/services/:service_id</td>
+		
+        p <i><b>Parameters:</i></b>
+        table
+            tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td></td><td></td><td></td><td></td><td></td>
+            		
+        h3 Result
+        table
+            tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>service</td><td><a href="#service">Service</a></td><td>Deleted service</td><td></td>
+	    		
+        h3 Errors
+        table
+            tr <td>№</td><th>Name</th><th>Code</th><th>Text</th><th>Description</th>
+            tr <td>1</td><td>404</td><td>Service not found</td><td></td>
+	    tr <td>2</td><td>422</td><td>Unprocessable entity</td><td></td>
+            
+    br/
+    br/
     
