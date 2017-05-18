@@ -248,8 +248,37 @@ block content
         h3 Result
         table
             tr <td>№</td><th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
-            tr <td>1</td><td>service</td><td>Array&lt<a href="#service">Service</a>&gt</td><td>Applications list</td><td></td>
+            tr <td>1</td><td>service</td><td>Array&lt;<a href="#service">Service</a>&gt;</td><td>Applications list</td><td></td>
            
+    br/
+    br/
+    
+    .api-object#service-show
+        h3: a(href="#service-show") Service.show <span>&nbsp;&#128279;</span>
+        p Returns service by id with current user state
+        p Required user authorization
+		
+        table
+            tr <th>Method</th><th>URL</th>
+            tr <td>GET</td><td>//api/v1/services/:serice_id</td>
+		
+        p <i><b>Parameters:</i></b>
+        table
+            tr <td>№</td><th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td>1</td><td>service_id</td><td>string</td><td></td><td>Service ID</td><td></td>
+            		
+        h3 Result
+        table
+            tr <td>№</td><th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>1</td><td>service</td><td><a href="#service">Service</a>t</td><td>Service</td><td></td>
+            tr <td>2</td><td>status</td><td>Array &lt; ServiceStatus &gt;</td><td>States list of service replica</td><td></td>
+	    tr <td>3</td><td>status_error</td><td>string</td><td>States service errors</td><td></td>
+	  
+	h3 Errors
+        table
+            tr <td>№</td><th>Name</th><th>Code</th><th>Text</th><th>Description</th>
+            tr <td>1</td><td>400</td><td>Service not found</td><td></td>  
+
     br/
     br/
     
