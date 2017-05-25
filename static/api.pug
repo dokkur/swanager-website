@@ -7,6 +7,8 @@ block content
     h1 Swanager API basic features
     p While the main development is in progress, there may be a lot of missing objects/methods.<br/>Please, track our <a href="https://github.com/dokkur/swanager" target="_blank">main repo</a> to get all the updates.
     
+    p API request data should be sent via proper json in post body.
+    
     .api-object#authrorization-rule
         h2 Authrorization 
         p Authrorization occurs by sending token in header
@@ -14,7 +16,7 @@ block content
         h3 Example:
         pre
             |authorization: 97fea45d-9f25-29e4-7030-d89a283f1c7246fbe9fe9bb317ef
-		
+        
     h2 Objects
 
     .api-object#application
@@ -167,7 +169,7 @@ block content
 
     br/
     br/
-    
+
     .api-object#port
         h3: a(href="#port") Port <span>&nbsp;&#128279;</span>
         table
@@ -175,20 +177,48 @@ block content
             tr <td>internal</td><td>int</td><td>Container port</td><td></td>
             tr <td>external</td><td>int</td><td>External port</td><td></td>
             tr <td>protocol</td><td>string</td><td>Protocol</td><td>tcp/udp</td>
-	
+
     br/
     br/
-    
-    h2 Methods	
-    .api-object#service-create
-        h3: a(href="#service-create") Service.create <span>&nbsp;&#128279;</span>
+
+    h2 Admin Methods
+    .api-object#stats
+        h3: a(href="#stats") Stats <span>&nbsp;&#128279;</span>
+        p Returns current users appliations state
+        p <a href="#authrorization-rule">Required user authorization</a>
+
+        table
+            tr <th>Method</th><th>URL</th>
+            tr <td>GET</td><td>/api/v1/stat</td>
+
+        p <i><b>Parameters:</i></b>
+        table
+            tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td></td><td></td><td></td><td></td><td></td>
+
+        h3 Result
+        table
+            tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>stat</td><td>Array[<a href="#statitem">Statitem</a>]</td><td>Services states list</td><td></td>
+
+        h3 Errors
+        table
+            tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
+            tr <td></td><td>500</td><td></td><td>Server error when reading from database</td>
+            
+    br/
+    br/
+
+    h2 Public Methods
+    .api-object#services-create
+        h3: a(href="#services-create") Services.create <span>&nbsp;&#128279;</span>
         p Creates service
         p <a href="#authrorization-rule">Required user authorization</a>
-		
+
         table
             tr <th>Method</th><th>URL</th>
             tr <td>POST</td><td>/api/v1/services</td>
-		
+
         p <i><b>Parameters:</i></b>
         table
             tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
@@ -198,12 +228,12 @@ block content
             tr <td>replicas</td><td>int</td><td></td><td>Replicas number</td><td></td>
             tr <td>published_ports</td><td>array[<a href="#port">Port Object</a>]</td><td></td><td></td><td></td>
             tr <td>volumes</td><td>array[string]</td><td></td><td></td><td></td>
-		
+
         h3 Result
         table
             tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
             tr <td>service</td><td><a href="#service">Service</a></td><td>Created service</td><td></td>
-		
+
         //h3 Errors
         //table
             tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
@@ -211,49 +241,49 @@ block content
             
     br/
     br/
-                
-    .api-object#service-delete
-        h3: a(href="#service-delete") Service.delete <span>&nbsp;&#128279;</span>
+
+    .api-object#services-delete
+        h3: a(href="#services-delete") Services.delete <span>&nbsp;&#128279;</span>
         p Deletes service (Can cause applications inconsistency if these services are associated with other services)
         p <a href="#authrorization-rule">Required user authorization</a>
-		
+
         table
             tr <th>Method</th><th>URL</th>
             tr <td>DELETE</td><td>/api/v1/services/:service_id</td>
-		
+
         p <i><b>Parameters:</i></b>
         table
             tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
             tr <td></td><td></td><td></td><td></td><td></td>
-            		
+
         h3 Result
         table
             tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
             tr <td>service</td><td><a href="#service">Service</a></td><td>Deleted service</td><td></td>
-	    		
+
         h3 Errors
         table
             tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
             tr <td>404</td><td>Service not found</td><td></td><td></td>
             tr <td>422</td><td>Unprocessable entity</td><td></td><td></td>
-            
+
     br/
     br/
-    
-    .api-object#service-list
-        h3: a(href="#service-list") Service.list <span>&nbsp;&#128279;</span>
+
+    .api-object#services-list
+        h3: a(href="#services-list") Services.list <span>&nbsp;&#128279;</span>
         p Returns services list for current user
         p <a href="#authrorization-rule">Required user authorization</a>
-		
+
         table
             tr <th>Method</th><th>URL</th>
             tr <td>GET</td><td>/api/v1/services</td>
-		
+
         p <i><b>Parameters:</i></b>
         table
             tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
             tr <td>app_id</td><td>string</td><td></td><td>Application filter</td><td></td>
-            		
+
         h3 Result
         table
             tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
@@ -262,27 +292,27 @@ block content
     br/
     br/
     
-    .api-object#service-show
-        h3: a(href="#service-show") Service.show <span>&nbsp;&#128279;</span>
+    .api-object#services-show
+        h3: a(href="#services-show") Services.show <span>&nbsp;&#128279;</span>
         p Returns service by id with current user state
         p <a href="#authrorization-rule">Required user authorization</a>
-		
+
         table
             tr <th>Method</th><th>URL</th>
             tr <td>GET</td><td>/api/v1/services/:serice_id</td>
-		
+
         p <i><b>Parameters:</i></b>
         table
             tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
             tr <td>service_id</td><td>string</td><td></td><td>Service ID</td><td></td>
-            		
+
         h3 Result
         table
             tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
             tr <td>service</td><td><a href="#service">Service</a></td><td>Service</td><td></td>
             tr <td>status</td><td>array[ServiceStatus]</td><td>List of service replica statuses</td><td></td>
             tr <td>status_error</td><td>string</td><td>Service status errors</td><td></td>
-	  
+
         h3 Errors
         table
             tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
@@ -290,28 +320,28 @@ block content
 
     br/
     br/
-    
-    .api-object#service-start
-        h3: a(href="#service-start") Service.start <span>&nbsp;&#128279;</span>
+
+    .api-object#services-start
+        h3: a(href="#services-start") Services.start <span>&nbsp;&#128279;</span>
         p Asynchronously starts service
         p <a href="#authrorization-rule">Required user authorization</a>
         p To get realtime service status update, you can join push notifications websocket channel 
-	
+
         table
             tr <th>Method</th><th>URL</th>
             tr <td>PUT</td><td>/api/v1/services/:service_id/start</td>
-		
+
         p <i><b>Parameters:</i></b>
         table
             tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
             tr <td>service_id</td><td>string</td><td></td><td>Service ID</td><td></td>
-            
+
         h3 Result
         table
             tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
             tr <td>job_id</td><td>string</td><td>Job ID</td><td></td>
             tr <td>url</td><td>string</td><td>URL for job status request</td><td></td>
-	    
+
         h3 Errors
         table
             tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
@@ -319,28 +349,28 @@ block content
 
     br/
     br/
-    
-    .api-object#service-stop
-        h3: a(href="#service-stop") Service.stop <span>&nbsp;&#128279;</span>
+
+    .api-object#services-stop
+        h3: a(href="#services-stop") Services.stop <span>&nbsp;&#128279;</span>
         p Asynchronously stops service
         p <a href="#authrorization-rule">Required user authorization</a>
         p To get realtime service status update, you can join push notifications websocket channel 
-	
+
         table
             tr <th>Method</th><th>URL</th>
             tr <td>PUT</td><td>/api/v1/services/:service_id/stop</td>
-		
+
         p <i><b>Parameters:</i></b>
         table
             tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
             tr <td>service_id</td><td>string</td><td></td><td>Service ID</td><td></td>
-            		
+
         h3 Result
         table
             tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
             tr <td>job_id</td><td>string</td><td>Job ID</td><td></td>
             tr <td>url</td><td>string</td><td>URL for job status request</td><td></td>
-	    
+
         h3 Errors
         table
             tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
@@ -349,31 +379,287 @@ block content
     br/
     br/
     
-    .api-object#service-update
-        h3: a(href="#service-update") Service.update <span>&nbsp;&#128279;</span>
+    .api-object#services-update
+        h3: a(href="#services-update") Services.update <span>&nbsp;&#128279;</span>
         p Updates service
         p <a href="#authrorization-rule">Required user authorization</a> 
-	
+
         table
             tr <th>Method</th><th>URL</th>
             tr <td>PUT</td><td>/api/v1/services/:service_id</td>
-		
+
         p <i><b>Parameters:</i></b>
         table
             tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
             tr <td></td><td><a href="#service">Service</a></td><td></td><td>Service</td><td></td>
             tr <td>service_id</td><td>string</td><td></td><td>Service ID</td><td></td>
-            		
+
         h3 Result
         table
             tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
             tr <td>service</td><td><a href="#service">Service</a></td><td>Service</td><td></td>
             tr <td>service_status</td><td>array[ServiceStatus]</td><td>List of service replica statuses</td><td></td>
-	    
+
         h3 Errors
         table
             tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
             tr <td>Not found</td><td>404</td><td>Service not found</td><td></td>  
 
     br/
+    br/
+
+    .api-object#applications-create
+        h3: a(href="#applications-create") Applications.create <span>&nbsp;&#128279;</span>
+        p Creates application
+        p <a href="#authrorization-rule">Required user authorization</a>
+
+        table
+            tr <th>Method</th><th>URL</th>
+            tr <td>POST</td><td>/api/v1/apps</td>
+
+        p <i><b>Parameters:</i></b>
+        table
+            tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td>name</td><td>string</td><td></td><td></td><td></td>
+
+        h3 Result
+        table
+            tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>application</td><td><a href="#application">application</a></td><td>Created application</td><td></td>
+
+        //h3 Errors
+        //table
+            tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
+            tr <td></td><td></td><td></td><td></td>
+
+    br/
+    br/
+
+    .api-object#applications-list
+        h3: a(href="#applications-list") Applications.list <span>&nbsp;&#128279;</span>
+        p Returns applications list for current user
+        p <a href="#authrorization-rule">Required user authorization</a>
+
+        table
+            tr <th>Method</th><th>URL</th>
+            tr <td>GET</td><td>/api/v1/apps</td>
+
+        p <i><b>Parameters:</i></b>
+        table
+            tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td></td><td></td><td></td><td></td><td></td>
+
+        h3 Result
+        table
+            tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>application</td><td>array[<a href="#application">Application</a>]</td><td>Applications list</td><td></td>
+
+    br/
+    br/
+
+    .api-object#applications-show
+        h3: a(href="#applications-show") Applications.show <span>&nbsp;&#128279;</span>
+        p Shows information about application
+        p <a href="#authrorization-rule">Required user authorization</a>
+
+        table
+            tr <th>Method</th><th>URL</th>
+            tr <td>GET</td><td>/api/v1/apps/:app_id</td>
+
+        p <i><b>Parameters:</i></b>
+        table
+            tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td>app_id</td><td>string</td><td></td><td></td><td></td>
+
+        h3 Result
+        table
+            tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>application</td><td><a href="#application">Application</a></td><td>Application</td><td></td>
+
+    br/
+    br/
+
+    .api-object#applications-start
+        h3: a(href="#applications-start") Applications.start <span>&nbsp;&#128279;</span>
+        p Starts application
+        p <a href="#authrorization-rule">Required user authorization</a>
+
+        table
+            tr <th>Method</th><th>URL</th>
+            tr <td>PUT</td><td>/api/v1/apps/:app_id/start</td>
+
+        p <i><b>Parameters:</i></b>
+        table
+            tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td>app_id</td><td>string</td><td></td><td>application ID</td><td></td>
+
+        h3 Result
+        table
+            tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>job_id</td><td>string</td><td>Job ID</td><td></td>
+            tr <td>url</td><td>string</td><td>URL for job status request</td><td></td>
+
+    br/
+    br/
     
+    .api-object#applications-stop
+        h3: a(href="#applications-stop") Applications.stop <span>&nbsp;&#128279;</span>
+        p Stops application
+        p <a href="#authrorization-rule">Required user authorization</a>
+
+        table
+            tr <th>Method</th><th>URL</th>
+            tr <td>PUT</td><td>/api/v1/apps/:app_id/stop</td>
+
+        p <i><b>Parameters:</i></b>
+        table
+            tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td>app_id</td><td>string</td><td></td><td>Application ID</td><td></td>
+
+        h3 Result
+        table
+            tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>job_id</td><td>string</td><td>Job ID</td><td></td>
+            tr <td>url</td><td>string</td><td>URL for job status request</td><td></td>
+
+
+    br/
+    br/
+
+    .api-object#applications-update
+        h3: a(href="#applications-update") Applications.update <span>&nbsp;&#128279;</span>
+        p Updates application
+        p <a href="#authrorization-rule">Required user authorization</a> 
+
+        table
+            tr <th>Method</th><th>URL</th>
+            tr <td>PUT</td><td>/api/v1/apps/:app_id</td>
+
+        p <i><b>Parameters:</i></b>
+        table
+            tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td></td><td><a href="#application">Application</a></td><td></td><td>Application</td><td></td>
+            tr <td>app_id</td><td>string</td><td></td><td>Application ID</td><td></td>
+
+        h3 Result
+        table
+            tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>application</td><td><a href="#application">Application</a></td><td>Application</td><td></td>
+            tr <td>application_status</td><td>array[ApplicationStatus]</td><td>List of application replica statuses</td><td></td>
+
+    br/
+    br/
+
+    .api-object#session-create
+        h3: a(href="#session-create") Session.create <span>&nbsp;&#128279;</span>
+        p Creates session
+        p <a href="#authrorization-rule">Required user authorization</a>
+
+        table
+            tr <th>Method</th><th>URL</th>
+            tr <td>POST</td><td>/api/v1/session</td>
+
+        p <i><b>Parameters:</i></b>
+        table
+            tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td>email</td><td>string</td><td></td><td></td><td></td>
+            tr <td>password</td><td>string</td><td></td><td></td><td></td>
+
+        h3 Result
+        table
+            tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>token</td><td><a href="#token">Token</a></td><td>Created token</td><td></td>
+        br/
+        br/
+
+    .api-object#session-delete
+        h3: a(href="#session-delete") Session.delete <span>&nbsp;&#128279;</span>
+        p <a href="#authrorization-rule">Required user authorization</a>
+
+        table
+            tr <th>Method</th><th>URL</th>
+            tr <td>DELETE</td><td>/api/v1/session</td>
+
+        p <i><b>Parameters:</i></b>
+        table
+            tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td></td><td></td><td></td><td></td><td></td>
+
+        h3 Result
+        table
+            tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>session</td><td><a href="#session">Session</a></td><td>Deleted session</td><td></td>
+
+    br/
+    br/
+
+    .api-object#users-create
+        h3: a(href="#users-create") Users.create <span>&nbsp;&#128279;</span>
+        p Creates user
+        
+        table
+            tr <th>Method</th><th>URL</th>
+            tr <td>POST</td><td>/api/v1/users</td>
+
+        p <i><b>Parameters:</i></b>
+        table
+            tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td>email</td><td>string</td><td></td><td></td><td></td>
+            tr <td>password</td><td>string</td><td></td><td></td><td></td>
+            tr <td>password_confirmation</td><td>string</td><td></td><td></td><td></td>
+
+        h3 Result
+        table
+            tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>user</td><td><a href="#user">User</a></td><td>Created user</td><td></td>
+
+        h3 Errors
+        table
+            tr <th>Name</th><th>Code</th><th>Text</th><th>Description</th>
+            tr <td></td><td>422</td><td>User with this email is already exists.</td><td>Email is already exists</td>
+            tr <td></td><td>400</td><td>Password and confirmation are not match.</td><td>Password and confirmation are not match</td>
+            tr <td></td><td>400</td><td></td><td>JSON errors</td>
+    br/
+    br/
+
+    .api-object#users-list
+        h3: a(href="#users-list") Users.list <span>&nbsp;&#128279;</span>
+        p Returns users list
+
+        table
+            tr <th>Method</th><th>URL</th>
+            tr <td>GET</td><td>/api/v1/users</td>
+
+        p <i><b>Parameters:</i></b>
+        table
+            tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td></td><td></td><td></td><td></td><td></td>
+
+        h3 Result
+        table
+            tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>users</td><td>array[<a href="#users">Users</a>]</td><td>Users list</td><td></td>
+
+    br/
+    br/
+
+    .api-object#users-show
+        h3: a(href="#users-show") Users.show <span>&nbsp;&#128279;</span>
+        p Shows information about user
+
+        table
+            tr <th>Method</th><th>URL</th>
+            tr <td>GET</td><td>/api/v1/users/:user_id</td>
+
+        p <i><b>Parameters:</i></b>
+        table
+            tr <th>Name</th><th>Type</th><th>Required</th><th>Description</th><th>Note</th>
+            tr <td>user_id</td><td>string</td><td></td><td></td><td></td>
+
+        h3 Result
+        table
+            tr <th>Parameter</th><th>Type</th><th>Description</th><th>Note</th>
+            tr <td>user</td><td><a href="#user">User</a></td><td>User</td><td></td>
+
+    br/
+    br/
